@@ -38,9 +38,10 @@ function App() {
         wind_speed: data.wind.speed, // Wind Speed
         description: data.weather[0].main,
         icon: data.weather[0].icon,
+        country: data.sys.country
       });
       setCity('');
-      
+
       const updatedSearches = recentSearches.filter(item => item.toLowerCase() !== city.toLowerCase()); // Remove if already exists
       const newSearches = [city, ...updatedSearches.slice(0, 4)]; // Add city at first & keep only last 5 searches
       setRecentSearches(newSearches);
@@ -126,6 +127,11 @@ function App() {
               <div className="data-item">
                 <p>
                   <span className="data-label">Wind Speed:</span> <strong>{weatherData.wind_speed} m/s</strong>
+                </p>
+              </div>
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Country:</span> <strong>{weatherData.country}</strong>
                 </p>
               </div>
             </div>
