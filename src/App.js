@@ -18,11 +18,6 @@ function App() {
       return;
     }
 
-    const newSearches = [city, ...recentSearches.slice(0, 4)]; // Sirf last 5 searches rakho
-    setRecentSearches(newSearches);
-    localStorage.setItem("recentSearches", JSON.stringify(newSearches));
-
-
     setLoading(true);
     setError(null);
     setWeatherData(null);
@@ -45,6 +40,11 @@ function App() {
         icon: data.weather[0].icon,
       });
       setCity('');
+      
+      const updatedSearches = recentSearches.filter(item => item.toLowerCase() !== city.toLowerCase()); // Remove if already exists
+      const newSearches = [city, ...updatedSearches.slice(0, 4)]; // Add city at first & keep only last 5 searches
+      setRecentSearches(newSearches);
+      localStorage.setItem("recentSearches", JSON.stringify(newSearches));
     } catch (error) {
       setError(error.message);
     } finally {
@@ -55,7 +55,11 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Weather App</h1>
+      <h1>
+        <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px" }} />
+        Weather App
+      </h1>
+
 
       {/* Search Bar */}
       <div className="search-bar">
@@ -81,8 +85,6 @@ function App() {
           </div>
         </div>
       )}
-
-
 
       {/* Loading State */}
       {loading && <p>Loading...</p>}
