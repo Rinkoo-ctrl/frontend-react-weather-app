@@ -348,3 +348,36 @@
     margin: 5px 0;
   }
 }
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  /* padding: 8px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:active {
+  transform: scale(0.9);
+}

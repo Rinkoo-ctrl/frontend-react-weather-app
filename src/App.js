@@ -68,13 +68,16 @@ function App() {
 
   return (
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-      <div className="dark-mode-toggle">
-        <button onClick={toggleDarkMode}>
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+      <div className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {darkMode ? (
+          <img src="https://img.icons8.com/?size=100&id=19209&format=png&color=000000" alt="Light Mode" className="dark-mode-icon" />
+        ) : (
+          <img src="https://img.icons8.com/?size=100&id=20182&format=png&color=000000" alt="Dark Mode" className="dark-mode-icon" />
+        )}
       </div>
+
       <h1>
-        <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px", borderRadius:"7px" }} />
+        <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px", borderRadius: "7px" }} />
         Weather App
       </h1>
 
