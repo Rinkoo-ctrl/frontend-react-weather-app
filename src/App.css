@@ -61,7 +61,7 @@
 }
 
 .app.dark-mode .weather-card strong {
-  color: #f1c40f;
+  color: #3498db;
 }
 
 /* Error Message */
@@ -84,9 +84,9 @@
 }
 
 .app.dark-mode .recent-searches button:hover {
-  background: #f1c40f;
+  background: #3498db;
   color: #1e272e;
-  box-shadow: 0 0 10px #f1c40f;
+  box-shadow: 0 0 10px #3498db;
 }
 
 /* Dark Mode Toggle Button */
@@ -107,8 +107,8 @@
 }
 
 .dark-mode-toggle button:hover {
-  background: #f1c40f;
-  box-shadow: 0 0 10px #f1c40f;
+  background: #3498db;
+  box-shadow: 0 0 10px #3498db;
   color: #1e272e;
 }
 

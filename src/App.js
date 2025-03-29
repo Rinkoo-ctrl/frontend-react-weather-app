@@ -74,7 +74,7 @@ function App() {
         </button>
       </div>
       <h1>
-        <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px" }} />
+        <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px", borderRadius:"7px" }} />
         Weather App
       </h1>
 
