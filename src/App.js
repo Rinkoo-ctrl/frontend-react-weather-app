@@ -100,16 +100,39 @@ function App() {
               alt="weather icon"
               className="weather-icon"
             />
-            <p>Temperature: {weatherData.temp}°C</p>
-            <p>Weather: {weatherData.description}</p>
-            <p>Feels Like: {weatherData.feels_like}°C</p>
-            <p>Humidity: {weatherData.humidity}%</p>
-            <p>Wind Speed: {weatherData.wind_speed} m/s</p>
+            <div className="data-container">
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Temperature:</span> <strong>{weatherData.temp}°C</strong>
+                </p>
+              </div>
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Feels Like:</span> <strong>{weatherData.feels_like}°C</strong>
+                </p>
+              </div>
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Weather:</span> <strong>{weatherData.description}</strong>
+                </p>
+              </div>
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Humidity:</span> <strong>{weatherData.humidity}%</strong>
+                </p>
+              </div>
+              <div className="data-item">
+                <p>
+                  <span className="data-label">Wind Speed:</span> <strong>{weatherData.wind_speed} m/s</strong>
+                </p>
+              </div>
+            </div>
           </div>
         ) : (
           !loading && !error && <p>Enter a city to see the weather!</p>
         )
       }
+
     </div >
   );
 }
