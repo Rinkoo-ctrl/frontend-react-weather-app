@@ -1,14 +1,117 @@
 .app {
   text-align: center;
   padding: 15px;
-  /* Further reduced padding */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #e0f2f7, #f0f8ff);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
 }
+
+/* Dark Mode Styles */
+.app.dark-mode {
+  background: linear-gradient(135deg, #1e272e, #2f3640);
+  color: #ecf0f1;
+}
+
+.app.dark-mode h1 {
+  color: #ecf0f1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Search Bar */
+.app.dark-mode .search-bar input,
+.app.dark-mode .search-bar button {
+  background: #485460;
+  color: #ecf0f1;
+  border: 1px solid #718093;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.app.dark-mode .search-bar input::placeholder {
+  color: #bdc3c7;
+}
+
+.app.dark-mode .search-bar button {
+  transition: 0.3s ease;
+}
+
+.app.dark-mode .search-bar button:hover {
+  background: #3498db;
+  box-shadow: 0 0 10px #3498db;
+}
+
+/* Weather Card */
+.app.dark-mode .weather-card {
+  background: rgba(30, 39, 46, 0.85);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.app.dark-mode .weather-card h2,
+.app.dark-mode .weather-card p,
+.app.dark-mode .weather-card .data-label {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .weather-card strong {
+  color: #f1c40f;
+}
+
+/* Error Message */
+.app.dark-mode .error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Recent Searches */
+.app.dark-mode .recent-searches h3 {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .recent-searches button {
+  border: 1px solid #ecf0f1;
+  background: transparent;
+  color: #ecf0f1;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.app.dark-mode .recent-searches button:hover {
+  background: #f1c40f;
+  color: #1e272e;
+  box-shadow: 0 0 10px #f1c40f;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dark-mode-toggle button {
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dark-mode-toggle button:hover {
+  background: #f1c40f;
+  box-shadow: 0 0 10px #f1c40f;
+  color: #1e272e;
+}
+
 
 .app h1 {
   font-size: 2em;
@@ -149,7 +252,8 @@
 
 .weather-card .data-item {
   display: flex;
-  justify-content: space-between; /* Ensure label and value are aligned properly */
+  justify-content: space-between;
+  /* Ensure label and value are aligned properly */
   align-items: center;
   width: calc(50% - 10px);
   margin-bottom: 12px;

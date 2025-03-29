@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -9,6 +9,15 @@ function App() {
   const [recentSearches, setRecentSearches] = useState(
     JSON.parse(localStorage.getItem("recentSearches")) || []
   );
+  const [darkMode, setDarkMode] = useState(false); // Add dark mode state
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -53,9 +62,17 @@ function App() {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <div className="app">
+    <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+      <div className="dark-mode-toggle">
+        <button onClick={toggleDarkMode}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
       <h1>
         <img src="https://logodix.com/logo/1255108.jpg" alt="weather icon" style={{ width: "55px", verticalAlign: "middle", marginRight: "10px", marginTop: "-8px" }} />
         Weather App
