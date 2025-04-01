@@ -2,6 +2,8 @@
 
 This project is a simple weather application built with React, allowing users to search for weather information by city name. It also features recent search history and a dark mode toggle.
 
+**Live Demo:** [https://rinkooweatherapp.netlify.app/](https://rinkooweatherapp.netlify.app/)
+
 ## Features
 
 -   **Weather Search:** Input a city and get current weather.
